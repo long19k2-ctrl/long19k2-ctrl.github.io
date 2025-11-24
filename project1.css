@@ -1,0 +1,317 @@
+:root{
+    --bg: #000000;
+    --card: #ffffff;
+    --muted: #777777;
+    --text:  #f5f5f5;
+    --primary: #b58e5d;
+    --accent: #e4cfa3;
+    --succses: #967346;
+    --radius: 15px;
+    --shadow: 0 10px 30px;
+}
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+}
+
+body {
+    font-family: 'inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     background: radial-gradient(100% 120% at 50% 0%, #FFD700 0%, var(--bg) 50% 100%), var(--bg);
+    color :var(--text);
+    line-height: 1.6;
+}
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: solid(10px);
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.logo {
+    width: 70px;
+    height: 40px;
+    border-radius: 12px;
+   background: linear-gradient(135deg, var(--primary), #000000);
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+}
+.brand span {
+    font-weight: bold;
+    letter-spacing: .3px;
+    color: var(--text);
+}
+nav ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: bold;
+    transition-property: background-color;
+    transition-duration: 0.3s; 
+    transition-timing-function: ease;
+}
+nav a:hover {
+    color: var(--text);
+    background-color: #ffffff; 
+    color: #333; 
+    border-radius: 10px;
+}
+#menu{
+    background-color: #000000;
+    border-radius: 15px;
+}
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+#menu ul li{
+    position: relative; /* dùng để định vị lại vị trí của menu con */ 
+}
+#menu ul li a{
+    display: block;
+    padding: 15px;
+}
+#menu ul li:hover{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+#menu ul li ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: #000000;
+    min-width: 180px;
+    flex-direction: column;
+    z-index: 100;
+    border-radius: 10px;
+}
+#menu ul li:hover > ul{
+    display: block;
+}
+#menu ul li ul li{
+   position: relative;
+}
+.search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.search input {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 12px;
+    outline: none;
+    min-width: 240px;
+}
+.btn {
+    appearance: none;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), #000000);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, .16);
+    background-color: var(--bg);
+}
+.btn-outline {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, .16);
+}
+.btn-outline:hover {
+    color: #ffffff;
+    background-color: #f97316;
+}
+.banner {
+    width: 100%;
+    height: 380px; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    display: block;
+    filter: brightness(80%); 
+}
+.usps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 28px 0;
+}
+
+.usp {
+    background: #0f1530;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+}
+
+.usp strong {
+    display: block;
+}
+/* --- Thiết lập chung (có thể đã có) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Phần Tiêu đề Danh sách --- */
+.list-header {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.list-header span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    /* Căn giữa nếu cần */
+    display: block;
+    text-align: center;
+}
+
+/* --- Phần Thân Danh sách & Bố cục Grid --- */
+.list-body {
+    /* Sử dụng CSS Grid để tạo lưới 4 cột */
+    display: grid;
+    /* Tạo 4 cột có kích thước bằng nhau */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    padding: 20px;
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa danh sách */
+}
+
+
+.product-card {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    transition-property: box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgb(255, 255, 255);
+    border: 1px solid #ffffff;
+}
+
+/* --- Hình ảnh Sản phẩm --- */
+.product-card img {
+    width: 100%;
+    height: auto;
+    /* Đảm bảo hình ảnh không bị méo và có chiều cao cố định */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* --- Thông tin Sản phẩm --- */
+.product-info {
+    flex-grow: 1; /* Cho phép phần thông tin chiếm hết không gian còn lại */
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-name {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    height: 50px; /* Giữ chiều cao cố định để tên sản phẩm 1-2 dòng */
+    overflow: hidden;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    height: 60px; /* Giữ chiều cao cố định cho mô tả */
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c0392b; /* Màu đỏ nổi bật cho giá */
+    margin-bottom: 15px;
+    margin-top: auto; /* Đẩy giá lên trên nút "Mua ngay" */
+}
+
+/* --- Nút Mua Ngay --- */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2980b9; /* Màu xanh nổi bật */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    width: 100%; /* Chiếm toàn bộ chiều rộng thẻ */
+}
+
+.btn-primary:hover {
+    background-color: #3498db;
+}
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
